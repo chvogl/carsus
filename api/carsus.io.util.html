@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>carsus.io.util module &mdash; carsus v0.1.dev652+g9f6d308</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/tardis_logo.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="carsus.io.zeta module" href="carsus.io.zeta.html" />
+    <link rel="prev" title="carsus.io.base module" href="carsus.io.base.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> carsus
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.dev652+g9f6d308
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart for Carsus</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Datasets</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../io/nist.html">NIST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/gfall.html">GFALL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/chianti.html">CHIANTI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/cmfgen.html">CMFGEN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/zeta.html">ZETA DATA</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Research with Carsus</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../research/publications.html">Carsus Publications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research/references.html">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing to Carsus</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">Physics Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Developer Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">carsus</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="carsus.html">carsus package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="carsus.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="carsus.io.html">carsus.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="carsus.model.html">carsus.model package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="carsus.util.html">carsus.util package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="carsus.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="carsus.html#module-carsus">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Legacy Code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../legacy/index.html">SQL Interface</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">carsus</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">carsus</a> &raquo;</li>
+        
+          <li><a href="carsus.html">carsus package</a> &raquo;</li>
+        
+          <li><a href="carsus.io.html">carsus.io package</a> &raquo;</li>
+        
+      <li>carsus.io.util module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api/carsus.io.util.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-carsus.io.util">
+<span id="carsus-io-util-module"></span><h1>carsus.io.util module<a class="headerlink" href="#module-carsus.io.util" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="carsus.io.util.convert_species_tuple2chianti_str">
+<span class="sig-prename descclassname"><span class="pre">carsus.io.util.</span></span><span class="sig-name descname"><span class="pre">convert_species_tuple2chianti_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">species</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.util.convert_species_tuple2chianti_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a species tuple to the ion name format used in <code class="xref py py-obj docutils literal notranslate"><span class="pre">chiantipy</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>species: tuple (atomic_number, ion_number)</strong></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str</dt><dd><p>ion name in the chiantipy format</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">convert_species_tuple2chianti_str</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="go">&#39;h_1&#39;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">convert_species_tuple2chianti_str</span><span class="p">((</span><span class="mi">14</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="go">&#39;si_2&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="carsus.io.util.to_flat_dict">
+<span class="sig-prename descclassname"><span class="pre">carsus.io.util.</span></span><span class="sig-name descname"><span class="pre">to_flat_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokens</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'_'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.util.to_flat_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a flattened dictionary from the named values in tokens.</p>
+<dl class="simple">
+<dt>E.g. suppose tokens.dump() output is</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>isotopic_comp: [‘0.000629’, ‘(‘, ‘7’, ‘)’]</dt><dd><ul>
+<li><p>nominal_value: 0.000629</p></li>
+<li><p>std_dev: 7e-06</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>Then the new dictionary is {‘isotopic_comp_nominal_value’: 0.000629, ‘isotopic_comp_std_dev’:7e-06}</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tokens: ~pyparsing.ParseResults</strong></dt><dd></dd>
+<dt><strong>parent_key: ~str – is used in recursive calls; you don’t need to pass this</strong></dt><dd></dd>
+<dt><strong>sep: ~str – is used to concatenate keys (default: “_”)</strong></dt><dd></dd>
+<dt><strong>Returns: ~dict</strong></dt><dd></dd>
+<dt><strong>——-</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="carsus.io.util.to_nom_val_and_std_dev">
+<span class="sig-prename descclassname"><span class="pre">carsus.io.util.</span></span><span class="sig-name descname"><span class="pre">to_nom_val_and_std_dev</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interval</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.util.to_nom_val_and_std_dev" title="Permalink to this definition">¶</a></dt>
+<dd><p>For a given interval [mu - sigma, mu + sigma] returns (mu, sigma)
+(Here mu is nominal value and sigma is standard deviation)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>interval: ~list [lwr_bnd, upr_bnd]</strong></dt><dd></dd>
+<dt><strong>Returns: ~tuple</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="carsus.io.zeta.html" class="btn btn-neutral float-right" title="carsus.io.zeta module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="carsus.io.base.html" class="btn btn-neutral float-left" title="carsus.io.base module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, TARDIS Collaboration.
+      <span class="lastupdated">
+        Last updated on 18 Jul 2021.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

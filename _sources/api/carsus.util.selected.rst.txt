@@ -1,0 +1,7 @@
+carsus.util.selected module
+===========================
+
+.. automodule:: carsus.util.selected
+   :members:
+   :undoc-members:
+   :show-inheritance:

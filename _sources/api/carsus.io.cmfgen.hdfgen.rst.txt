@@ -1,0 +1,7 @@
+carsus.io.cmfgen.hdfgen module
+==============================
+
+.. automodule:: carsus.io.cmfgen.hdfgen
+   :members:
+   :undoc-members:
+   :show-inheritance:

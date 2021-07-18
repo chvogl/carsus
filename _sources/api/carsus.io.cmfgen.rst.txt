@@ -1,0 +1,19 @@
+carsus.io.cmfgen package
+========================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   carsus.io.cmfgen.base
+   carsus.io.cmfgen.hdfgen
+
+Module contents
+---------------
+
+.. automodule:: carsus.io.cmfgen
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,7 @@
+carsus.io.nist.ionization module
+================================
+
+.. automodule:: carsus.io.nist.ionization
+   :members:
+   :undoc-members:
+   :show-inheritance:

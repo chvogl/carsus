@@ -1,0 +1,7 @@
+carsus.model.atomic module
+==========================
+
+.. automodule:: carsus.model.atomic
+   :members:
+   :undoc-members:
+   :show-inheritance:

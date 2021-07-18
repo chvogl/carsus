@@ -1,0 +1,18 @@
+carsus.io.kurucz package
+========================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   carsus.io.kurucz.gfall
+
+Module contents
+---------------
+
+.. automodule:: carsus.io.kurucz
+   :members:
+   :undoc-members:
+   :show-inheritance:

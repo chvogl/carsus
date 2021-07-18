@@ -1,0 +1,468 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>carsus.io.output.base module &mdash; carsus v0.1.dev652+g9f6d308</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/tardis_logo.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="carsus.io.output.tardis_ module" href="carsus.io.output.tardis_.html" />
+    <link rel="prev" title="carsus.io.output package" href="carsus.io.output.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> carsus
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.dev652+g9f6d308
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart for Carsus</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Datasets</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../io/nist.html">NIST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/gfall.html">GFALL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/chianti.html">CHIANTI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/cmfgen.html">CMFGEN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/zeta.html">ZETA DATA</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Research with Carsus</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../research/publications.html">Carsus Publications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research/references.html">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing to Carsus</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">Physics Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Developer Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">carsus</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="carsus.html">carsus package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="carsus.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="carsus.io.html">carsus.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="carsus.model.html">carsus.model package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="carsus.util.html">carsus.util package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="carsus.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="carsus.html#module-carsus">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Legacy Code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../legacy/index.html">SQL Interface</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">carsus</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">carsus</a> &raquo;</li>
+        
+          <li><a href="carsus.html">carsus package</a> &raquo;</li>
+        
+          <li><a href="carsus.io.html">carsus.io package</a> &raquo;</li>
+        
+          <li><a href="carsus.io.output.html">carsus.io.output package</a> &raquo;</li>
+        
+      <li>carsus.io.output.base module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api/carsus.io.output.base.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-carsus.io.output.base">
+<span id="carsus-io-output-base-module"></span><h1>carsus.io.output.base module<a class="headerlink" href="#module-carsus.io.output.base" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="carsus.io.output.base.TARDISAtomData">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">carsus.io.output.base.</span></span><span class="sig-name descname"><span class="pre">TARDISAtomData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atomic_weights</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ionization_energies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gfall_reader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zeta_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chianti_reader</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmfgen_reader</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels_lines_param</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'levels_metastable_loggf_threshold':</span> <span class="pre">-</span> <span class="pre">3,</span> <span class="pre">'lines_loggf_threshold':</span> <span class="pre">-</span> <span class="pre">3}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collisions_param</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'temperatures':</span> <span class="pre">array([2000,</span> <span class="pre">4000,</span> <span class="pre">6000,</span> <span class="pre">8000,</span> <span class="pre">10000,</span> <span class="pre">12000,</span> <span class="pre">14000,</span> <span class="pre">16000,</span> <span class="pre">18000,</span> <span class="pre">20000,</span> <span class="pre">22000,</span> <span class="pre">24000,</span> <span class="pre">26000,</span> <span class="pre">28000,</span> <span class="pre">30000,</span> <span class="pre">32000,</span> <span class="pre">34000,</span> <span class="pre">36000,</span> <span class="pre">38000,</span> <span class="pre">40000,</span> <span class="pre">42000,</span> <span class="pre">44000,</span> <span class="pre">46000,</span> <span class="pre">48000])}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.output.base.TARDISAtomData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>levels</strong><span class="classifier">pandas.DataFrame</span></dt><dd></dd>
+<dt><strong>lines</strong><span class="classifier">pandas.DataFrame</span></dt><dd></dd>
+<dt><strong>collisions</strong><span class="classifier">pandas.DataFrame</span></dt><dd></dd>
+<dt><strong>macro_atom</strong><span class="classifier">pandas.DataFrame</span></dt><dd></dd>
+<dt><strong>macro_atom_references</strong><span class="classifier">pandas.DataFrame</span></dt><dd></dd>
+<dt><a class="reference internal" href="#carsus.io.output.base.TARDISAtomData.levels_prepared" title="carsus.io.output.base.TARDISAtomData.levels_prepared"><code class="xref py py-obj docutils literal notranslate"><span class="pre">levels_prepared</span></code></a><span class="classifier">pandas.DataFrame</span></dt><dd><p>Prepare the DataFrame with levels for TARDIS.</p>
+</dd>
+<dt><a class="reference internal" href="#carsus.io.output.base.TARDISAtomData.lines_prepared" title="carsus.io.output.base.TARDISAtomData.lines_prepared"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lines_prepared</span></code></a><span class="classifier">pandas.DataFrame</span></dt><dd><p>Prepare the DataFrame with lines for TARDIS.</p>
+</dd>
+<dt><strong>collisions_prepared: pandas.DataFrame</strong></dt><dd></dd>
+<dt><a class="reference internal" href="#carsus.io.output.base.TARDISAtomData.macro_atom_prepared" title="carsus.io.output.base.TARDISAtomData.macro_atom_prepared"><code class="xref py py-obj docutils literal notranslate"><span class="pre">macro_atom_prepared</span></code></a><span class="classifier">pandas.DataFrame</span></dt><dd><p>Prepare the DataFrame with macro atom data for TARDIS</p>
+</dd>
+<dt><a class="reference internal" href="#carsus.io.output.base.TARDISAtomData.macro_atom_references_prepared" title="carsus.io.output.base.TARDISAtomData.macro_atom_references_prepared"><code class="xref py py-obj docutils literal notranslate"><span class="pre">macro_atom_references_prepared</span></code></a><span class="classifier">pandas.DataFrame</span></dt><dd><p>Prepare the DataFrame with macro atom references for TARDIS</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="carsus.io.output.base.TARDISAtomData.collisions_prepared">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">collisions_prepared</span></span><a class="headerlink" href="#carsus.io.output.base.TARDISAtomData.collisions_prepared" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare the DataFrame with electron collisions for TARDIS.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>pandas.DataFrame</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carsus.io.output.base.TARDISAtomData.create_collisions">
+<span class="sig-name descname"><span class="pre">create_collisions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperatures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([2000,</span> <span class="pre">4000,</span> <span class="pre">6000,</span> <span class="pre">8000,</span> <span class="pre">10000,</span> <span class="pre">12000,</span> <span class="pre">14000,</span> <span class="pre">16000,</span> <span class="pre">18000,</span> <span class="pre">20000,</span> <span class="pre">22000,</span> <span class="pre">24000,</span> <span class="pre">26000,</span> <span class="pre">28000,</span> <span class="pre">30000,</span> <span class="pre">32000,</span> <span class="pre">34000,</span> <span class="pre">36000,</span> <span class="pre">38000,</span> <span class="pre">40000,</span> <span class="pre">42000,</span> <span class="pre">44000,</span> <span class="pre">46000,</span> <span class="pre">48000])</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.output.base.TARDISAtomData.create_collisions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the same output than <code class="xref py py-obj docutils literal notranslate"><span class="pre">AtomData.create_collisions</span></code> method.</p>
+<p>Generates the definitive <code class="xref py py-obj docutils literal notranslate"><span class="pre">collisions</span></code> DataFrame by adding new columns
+and making some calculations.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carsus.io.output.base.TARDISAtomData.create_levels_lines">
+<span class="sig-name descname"><span class="pre">create_levels_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines_loggf_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels_metastable_loggf_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.output.base.TARDISAtomData.create_levels_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the same output than <code class="xref py py-obj docutils literal notranslate"><span class="pre">AtomData.create_levels_lines</span></code> method.</p>
+<p>Generates the definitive <code class="xref py py-obj docutils literal notranslate"><span class="pre">lines</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">levels</span></code> DataFrames by adding
+new columns and making some calculations.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carsus.io.output.base.TARDISAtomData.create_macro_atom">
+<span class="sig-name descname"><span class="pre">create_macro_atom</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.output.base.TARDISAtomData.create_macro_atom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a DataFrame containing macro atom data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>pandas.DataFrame</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Refer to the docs: <a class="reference external" href="https://tardis-sn.github.io/tardis/physics/plasma/macroatom.html">https://tardis-sn.github.io/tardis/physics/plasma/macroatom.html</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carsus.io.output.base.TARDISAtomData.create_macro_atom_references">
+<span class="sig-name descname"><span class="pre">create_macro_atom_references</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.output.base.TARDISAtomData.create_macro_atom_references" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a DataFrame containing macro atom reference data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>pandas.DataFrame</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carsus.io.output.base.TARDISAtomData.get_lvl_index2id">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">get_lvl_index2id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels_all</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.output.base.TARDISAtomData.get_lvl_index2id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Matches level indexes with level IDs for a given DataFrame.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="carsus.io.output.base.TARDISAtomData.levels_prepared">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">levels_prepared</span></span><a class="headerlink" href="#carsus.io.output.base.TARDISAtomData.levels_prepared" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare the DataFrame with levels for TARDIS.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>pandas.DataFrame</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="carsus.io.output.base.TARDISAtomData.lines_prepared">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">lines_prepared</span></span><a class="headerlink" href="#carsus.io.output.base.TARDISAtomData.lines_prepared" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare the DataFrame with lines for TARDIS.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>pandas.DataFrame</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="carsus.io.output.base.TARDISAtomData.macro_atom_prepared">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">macro_atom_prepared</span></span><a class="headerlink" href="#carsus.io.output.base.TARDISAtomData.macro_atom_prepared" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare the DataFrame with macro atom data for TARDIS</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>macro_atom_prepared</strong><span class="classifier">pandas.DataFrame</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Refer to the docs: <a class="reference external" href="https://tardis-sn.github.io/tardis/physics/plasma/macroatom.html">https://tardis-sn.github.io/tardis/physics/plasma/macroatom.html</a></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="carsus.io.output.base.TARDISAtomData.macro_atom_references_prepared">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">macro_atom_references_prepared</span></span><a class="headerlink" href="#carsus.io.output.base.TARDISAtomData.macro_atom_references_prepared" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare the DataFrame with macro atom references for TARDIS</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>pandas.DataFrame</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carsus.io.output.base.TARDISAtomData.solve_priorities">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">solve_priorities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">levels</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.output.base.TARDISAtomData.solve_priorities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of unique species per data source.</p>
+<p class="rubric">Notes</p>
+<p>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">ds_id</span></code> field is the data source identifier.</p>
+<p>1 : NIST
+2 : GFALL
+3 : Knox Long’s Zeta
+4 : Chianti Database
+5 : CMFGEN</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carsus.io.output.base.TARDISAtomData.to_hdf">
+<span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.output.base.TARDISAtomData.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dump <code class="xref py py-obj docutils literal notranslate"><span class="pre">prepared</span></code> attributes into an HDF5 file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fname</strong><span class="classifier">path</span></dt><dd><p>Path to the HDF5 output file.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="carsus.io.output.tardis_.html" class="btn btn-neutral float-right" title="carsus.io.output.tardis_ module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="carsus.io.output.html" class="btn btn-neutral float-left" title="carsus.io.output package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, TARDIS Collaboration.
+      <span class="lastupdated">
+        Last updated on 18 Jul 2021.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

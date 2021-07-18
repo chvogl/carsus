@@ -1,0 +1,19 @@
+carsus.io.output package
+========================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   carsus.io.output.base
+   carsus.io.output.tardis_
+
+Module contents
+---------------
+
+.. automodule:: carsus.io.output
+   :members:
+   :undoc-members:
+   :show-inheritance:

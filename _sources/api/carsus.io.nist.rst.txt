@@ -1,0 +1,21 @@
+carsus.io.nist package
+======================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   carsus.io.nist.ionization
+   carsus.io.nist.ionization_grammar
+   carsus.io.nist.weightscomp
+   carsus.io.nist.weightscomp_grammar
+
+Module contents
+---------------
+
+.. automodule:: carsus.io.nist
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,7 @@
+carsus.io.nist.ionization\_grammar module
+=========================================
+
+.. automodule:: carsus.io.nist.ionization_grammar
+   :members:
+   :undoc-members:
+   :show-inheritance:

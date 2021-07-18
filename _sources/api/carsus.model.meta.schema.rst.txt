@@ -1,0 +1,7 @@
+carsus.model.meta.schema module
+===============================
+
+.. automodule:: carsus.model.meta.schema
+   :members:
+   :undoc-members:
+   :show-inheritance:

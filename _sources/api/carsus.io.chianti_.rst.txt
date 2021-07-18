@@ -1,0 +1,18 @@
+carsus.io.chianti\_ package
+===========================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   carsus.io.chianti_.chianti_
+
+Module contents
+---------------
+
+.. automodule:: carsus.io.chianti_
+   :members:
+   :undoc-members:
+   :show-inheritance:

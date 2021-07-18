@@ -1,0 +1,7 @@
+carsus.io.nist.weightscomp\_grammar module
+==========================================
+
+.. automodule:: carsus.io.nist.weightscomp_grammar
+   :members:
+   :undoc-members:
+   :show-inheritance:

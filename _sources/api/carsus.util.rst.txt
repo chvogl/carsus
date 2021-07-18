@@ -1,0 +1,21 @@
+carsus.util package
+===================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   carsus.util.colored_logger
+   carsus.util.hash
+   carsus.util.helpers
+   carsus.util.selected
+
+Module contents
+---------------
+
+.. automodule:: carsus.util
+   :members:
+   :undoc-members:
+   :show-inheritance:

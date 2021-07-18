@@ -1,0 +1,7 @@
+carsus.util.colored\_logger module
+==================================
+
+.. automodule:: carsus.util.colored_logger
+   :members:
+   :undoc-members:
+   :show-inheritance:

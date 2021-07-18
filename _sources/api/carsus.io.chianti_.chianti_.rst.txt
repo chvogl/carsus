@@ -1,0 +1,7 @@
+carsus.io.chianti\_.chianti\_ module
+====================================
+
+.. automodule:: carsus.io.chianti_.chianti_
+   :members:
+   :undoc-members:
+   :show-inheritance:

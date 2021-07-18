@@ -1,0 +1,7 @@
+carsus.io.kurucz.gfall module
+=============================
+
+.. automodule:: carsus.io.kurucz.gfall
+   :members:
+   :undoc-members:
+   :show-inheritance:

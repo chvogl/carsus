@@ -1,0 +1,32 @@
+carsus.io package
+=================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   carsus.io.chianti_
+   carsus.io.cmfgen
+   carsus.io.kurucz
+   carsus.io.nist
+   carsus.io.output
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   carsus.io.base
+   carsus.io.util
+   carsus.io.zeta
+
+Module contents
+---------------
+
+.. automodule:: carsus.io
+   :members:
+   :undoc-members:
+   :show-inheritance:

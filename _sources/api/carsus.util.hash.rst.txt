@@ -1,0 +1,7 @@
+carsus.util.hash module
+=======================
+
+.. automodule:: carsus.util.hash
+   :members:
+   :undoc-members:
+   :show-inheritance:

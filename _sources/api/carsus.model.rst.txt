@@ -1,0 +1,26 @@
+carsus.model package
+====================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   carsus.model.meta
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   carsus.model.atomic
+
+Module contents
+---------------
+
+.. automodule:: carsus.model
+   :members:
+   :undoc-members:
+   :show-inheritance:

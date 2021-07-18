@@ -1,0 +1,7 @@
+carsus.model.meta.base module
+=============================
+
+.. automodule:: carsus.model.meta.base
+   :members:
+   :undoc-members:
+   :show-inheritance:

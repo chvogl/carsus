@@ -1,0 +1,265 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Quickstart for Carsus\n",
+    "\n",
+    "In this guide you will learn how to create an atomic data file suitable for [TARDIS](https://github.com/tardis-sn/tardis)."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Atomic Weights and Ionization Energies\n",
+    "\n",
+    "Atomic weights and ionization energies are taken from the National Institute of Standards and Technology (NIST).\n",
+    "\n",
+    "<div class=\"alert alert-info\">\n",
+    "\n",
+    "**See also:**\n",
+    "\n",
+    "Get familiar with [Notation in Carsus](development/notation.rst).\n",
+    "    \n",
+    "</div>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from carsus.io.nist import NISTWeightsComp, NISTIonizationEnergies\n",
+    "\n",
+    "atomic_weights = NISTWeightsComp()\n",
+    "ionization_energies = NISTIonizationEnergies('H-Zn')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Levels, Lines and Collisions\n",
+    "\n",
+    "Carsus supports three sources of energy levels and spectral lines: GFALL, CHIANTI and CMFGEN.\n",
+    "\n",
+    "### GFALL\n",
+    "\n",
+    "The Robert Kurucz's Atomic Linelist (GFALL) is the main source of levels and lines."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from carsus.io.kurucz import GFALLReader\n",
+    "\n",
+    "gfall_reader = GFALLReader('H-Zn')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-warning\">\n",
+    "\n",
+    "**Warning:**\n",
+    "    \n",
+    "Creating a `GFALLReader` instance is **required**. Other sources of levels and lines are **optional**.\n",
+    "\n",
+    "</div>\n",
+    "\n",
+    "### CHIANTI\n",
+    "\n",
+    "The Chianti Atomic Database is also a source of collision strengths."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from carsus.io.chianti_ import ChiantiReader\n",
+    "\n",
+    "chianti_reader = ChiantiReader('H-He', collisions=True, priority=20)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "By default `priority` parameter is set to `10`. Increase this value if you want to keep CHIANTI levels and lines over GFALL."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### CMFGEN\n",
+    "\n",
+    "Ingestion of energy levels and spectral lines from the CMFGEN Atomic Data is not so straightforward.\n",
+    "\n",
+    "You'll need to parse the files manually, construct a dictionary and create a `CMFGENReader` object."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from carsus.io.cmfgen import CMFGENReader, CMFGENEnergyLevelsParser, CMFGENOscillatorStrengthsParser\n",
+    "\n",
+    "# Parse levels\n",
+    "si_0_lvl = CMFGENEnergyLevelsParser('/tmp/atomic/SIL/I/23nov11/SiI_OSC')\n",
+    "si_1_lvl = CMFGENEnergyLevelsParser('/tmp/atomic/SIL/II/16sep15/si2_osc_kurucz')\n",
+    "\n",
+    "# Parse lines\n",
+    "si_0_osc = CMFGENOscillatorStrengthsParser('/tmp/atomic/SIL/I/23nov11/SiI_OSC')\n",
+    "si_1_osc = CMFGENOscillatorStrengthsParser('/tmp/atomic/SIL/II/16sep15/si2_osc_kurucz')\n",
+    "\n",
+    "# Create dict\n",
+    "cmfgen_data = {'Si 0': {'levels': si_0_lvl, 'lines': si_0_osc},\n",
+    "               'Si 1': {'levels': si_1_lvl, 'lines': si_1_osc},}\n",
+    "\n",
+    "cmfgen_reader = CMFGENReader(cmfgen_data, priority=20)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Zeta Data\n",
+    "\n",
+    "The Knox S. Long's ground state recombinations fractions ($\\zeta$)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from carsus.io.zeta import KnoxLongZeta\n",
+    "\n",
+    "zeta_data = KnoxLongZeta()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Dump to HDF5\n",
+    "\n",
+    "Finally, create a `TARDISAtomData` object and dump the data with the `to_hdf` method."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [],
+   "source": [
+    "from carsus.io.output import TARDISAtomData\n",
+    "\n",
+    "atom_data = TARDISAtomData(atomic_weights,\n",
+    "                           ionization_energies,\n",
+    "                           gfall_reader,\n",
+    "                           zeta_data,\n",
+    "                           chianti_reader,\n",
+    "                           cmfgen_reader)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "atom_data.to_hdf('kurucz_cd23_chianti_H-He_cmfgen_Si_I-II.h5')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "You are done! Now you can use your file to run TARDIS simulations."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Metadata\n",
+    "\n",
+    "Carsus stores metadata inside the HDF5 files to ensure reproducibility. This metadata includes a checksum per `DataFrame`, the current version of every dataset and relevant software versions. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "pd.read_hdf('kurucz_cd23_chianti_H-He_cmfgen_Si_I-II.h5', key='meta')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "nbsphinx": "hidden"
+   },
+   "outputs": [],
+   "source": [
+    "# nbsphinx hidden cell\n",
+    "!rm kurucz_cd23_chianti_H-He.h5"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.13"
+  },
+  "widgets": {
+   "application/vnd.jupyter.widget-state+json": {
+    "state": {},
+    "version_major": 2,
+    "version_minor": 0
+   }
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

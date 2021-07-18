@@ -1,0 +1,469 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>carsus.io.nist.weightscomp module &mdash; carsus v0.1.dev652+g9f6d308</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/tardis_logo.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="carsus.io.nist.weightscomp_grammar module" href="carsus.io.nist.weightscomp_grammar.html" />
+    <link rel="prev" title="carsus.io.nist.ionization_grammar module" href="carsus.io.nist.ionization_grammar.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> carsus
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.dev652+g9f6d308
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart for Carsus</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Datasets</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../io/nist.html">NIST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/gfall.html">GFALL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/chianti.html">CHIANTI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/cmfgen.html">CMFGEN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/zeta.html">ZETA DATA</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Research with Carsus</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../research/publications.html">Carsus Publications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research/references.html">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing to Carsus</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">Physics Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Developer Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">carsus</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="carsus.html">carsus package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="carsus.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="carsus.io.html">carsus.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="carsus.model.html">carsus.model package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="carsus.util.html">carsus.util package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="carsus.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="carsus.html#module-carsus">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Legacy Code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../legacy/index.html">SQL Interface</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">carsus</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">carsus</a> &raquo;</li>
+        
+          <li><a href="carsus.html">carsus package</a> &raquo;</li>
+        
+          <li><a href="carsus.io.html">carsus.io package</a> &raquo;</li>
+        
+          <li><a href="carsus.io.nist.html">carsus.io.nist package</a> &raquo;</li>
+        
+      <li>carsus.io.nist.weightscomp module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api/carsus.io.nist.weightscomp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-carsus.io.nist.weightscomp">
+<span id="carsus-io-nist-weightscomp-module"></span><h1>carsus.io.nist.weightscomp module<a class="headerlink" href="#module-carsus.io.nist.weightscomp" title="Permalink to this headline">¶</a></h1>
+<p>Input module for the NIST Atomic Weights and Isotopic Compositions database
+<a class="reference external" href="http://www.nist.gov/pml/data/comp.cfm">http://www.nist.gov/pml/data/comp.cfm</a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="carsus.io.nist.weightscomp.NISTWeightsComp">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">carsus.io.nist.weightscomp.</span></span><span class="sig-name descname"><span class="pre">NISTWeightsComp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'H-Pu'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.nist.weightscomp.NISTWeightsComp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../legacy/api/api.html#carsus.io.base.BaseParser" title="carsus.io.base.BaseParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">carsus.io.base.BaseParser</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>base</strong><span class="classifier">pandas.DataFrame</span></dt><dd></dd>
+<dt><strong>columns</strong><span class="classifier">list of str</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>to_hdf(fname)</strong></p></td>
+<td><p>Dump the <code class="xref py py-obj docutils literal notranslate"><span class="pre">base</span></code> attribute into an HDF5 file</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="carsus.io.nist.weightscomp.NISTWeightsComp.to_hdf">
+<span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.nist.weightscomp.NISTWeightsComp.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dump the <code class="xref py py-obj docutils literal notranslate"><span class="pre">base</span></code> attribute into an HDF5 file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fname</strong><span class="classifier">path</span></dt><dd><p>Path to the HDF5 output file</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="carsus.io.nist.weightscomp.NISTWeightsCompIngester">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">carsus.io.nist.weightscomp.</span></span><span class="sig-name descname"><span class="pre">NISTWeightsCompIngester</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_short_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'nist'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">downloader</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.nist.weightscomp.NISTWeightsCompIngester" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../legacy/api/api.html#carsus.io.base.BaseIngester" title="carsus.io.base.BaseIngester"><code class="xref py py-class docutils literal notranslate"><span class="pre">carsus.io.base.BaseIngester</span></code></a></p>
+<p>Class for ingesters for the NIST Atomic Weights and Isotopic Compositions database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>session: SQLAlchemy session</strong></dt><dd></dd>
+<dt><strong>data_source: DataSource instance</strong></dt><dd><p>The data source of the ingester</p>
+</dd>
+<dt><strong>parser</strong><span class="classifier">BaseParser instance</span></dt><dd><p>(default value = NISTWeightsCompPyparser())</p>
+</dd>
+<dt><strong>downloader</strong><span class="classifier">function</span></dt><dd><p>(default value = download_weightscomp)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>download()</strong></p></td>
+<td><p>Downloads the data with the ‘downloader’ and loads the <a class="reference external" href="https://docs.python.org/3/library/parser.html#module-parser" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parser</span></code></a> with it</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ingest(session)</strong></p></td>
+<td><p>Persists the downloaded data into the database</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="carsus.io.nist.weightscomp.NISTWeightsCompIngester.download">
+<span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.nist.weightscomp.NISTWeightsCompIngester.download" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carsus.io.nist.weightscomp.NISTWeightsCompIngester.ingest">
+<span class="sig-name descname"><span class="pre">ingest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atomic_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.nist.weightscomp.NISTWeightsCompIngester.ingest" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>Only</em> ingests atomic weights <em>for now</em></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carsus.io.nist.weightscomp.NISTWeightsCompIngester.ingest_atomic_weights">
+<span class="sig-name descname"><span class="pre">ingest_atomic_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atomic_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.nist.weightscomp.NISTWeightsCompIngester.ingest_atomic_weights" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="carsus.io.nist.weightscomp.NISTWeightsCompPyparser">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">carsus.io.nist.weightscomp.</span></span><span class="sig-name descname"><span class="pre">NISTWeightsCompPyparser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">grammar={{{{{{Dict:(Group:({{Atomic</span> <span class="pre">Number</span> <span class="pre">|</span> <span class="pre">Atomic</span> <span class="pre">Symbol</span> <span class="pre">|</span> <span class="pre">Mass</span> <span class="pre">Number</span> <span class="pre">|</span> <span class="pre">Relative</span> <span class="pre">Atomic</span> <span class="pre">Mass</span> <span class="pre">|</span> <span class="pre">Isotopic</span> <span class="pre">Composition</span> <span class="pre">|</span> <span class="pre">Standard</span> <span class="pre">Atomic</span> <span class="pre">Weight</span> <span class="pre">|</span> <span class="pre">Notes</span> <span class="pre">Suppress:(&quot;=&quot;)}</span> <span class="pre">W:(0123...)}))</span> <span class="pre">Dict:(Group:({{Atomic</span> <span class="pre">Number</span> <span class="pre">|</span> <span class="pre">Atomic</span> <span class="pre">Symbol</span> <span class="pre">|</span> <span class="pre">Mass</span> <span class="pre">Number</span> <span class="pre">|</span> <span class="pre">Relative</span> <span class="pre">Atomic</span> <span class="pre">Mass</span> <span class="pre">|</span> <span class="pre">Isotopic</span> <span class="pre">Composition</span> <span class="pre">|</span> <span class="pre">Standard</span> <span class="pre">Atomic</span> <span class="pre">Weight</span> <span class="pre">|</span> <span class="pre">Notes</span> <span class="pre">Suppress:(&quot;=&quot;)}</span> <span class="pre">W:(ABCD...)}))}</span> <span class="pre">Dict:(Group:({{Atomic</span> <span class="pre">Number</span> <span class="pre">|</span> <span class="pre">Atomic</span> <span class="pre">Symbol</span> <span class="pre">|</span> <span class="pre">Mass</span> <span class="pre">Number</span> <span class="pre">|</span> <span class="pre">Relative</span> <span class="pre">Atomic</span> <span class="pre">Mass</span> <span class="pre">|</span> <span class="pre">Isotopic</span> <span class="pre">Composition</span> <span class="pre">|</span> <span class="pre">Standard</span> <span class="pre">Atomic</span> <span class="pre">Weight</span> <span class="pre">|</span> <span class="pre">Notes</span> <span class="pre">Suppress:(&quot;=&quot;)}</span> <span class="pre">W:(0123...)}))}</span> <span class="pre">Dict:(Group:({{Atomic</span> <span class="pre">Number</span> <span class="pre">|</span> <span class="pre">Atomic</span> <span class="pre">Symbol</span> <span class="pre">|</span> <span class="pre">Mass</span> <span class="pre">Number</span> <span class="pre">|</span> <span class="pre">Relative</span> <span class="pre">Atomic</span> <span class="pre">Mass</span> <span class="pre">|</span> <span class="pre">Isotopic</span> <span class="pre">Composition</span> <span class="pre">|</span> <span class="pre">Standard</span> <span class="pre">Atomic</span> <span class="pre">Weight</span> <span class="pre">|</span> <span class="pre">Notes</span> <span class="pre">Suppress:(&quot;=&quot;)}</span> <span class="pre">{{{{W:(0123...</span></em>, <em class="sig-param"><span class="pre">0123...)</span> <span class="pre">&quot;(&quot;}</span> <span class="pre">W:(0123...)}</span> <span class="pre">[&quot;#&quot;]}</span> <span class="pre">&quot;)&quot;}}))}</span> <span class="pre">Dict:(Group:({{Atomic</span> <span class="pre">Number</span> <span class="pre">|</span> <span class="pre">Atomic</span> <span class="pre">Symbol</span> <span class="pre">|</span> <span class="pre">Mass</span> <span class="pre">Number</span> <span class="pre">|</span> <span class="pre">Relative</span> <span class="pre">Atomic</span> <span class="pre">Mass</span> <span class="pre">|</span> <span class="pre">Isotopic</span> <span class="pre">Composition</span> <span class="pre">|</span> <span class="pre">Standard</span> <span class="pre">Atomic</span> <span class="pre">Weight</span> <span class="pre">|</span> <span class="pre">Notes</span> <span class="pre">Suppress:(&quot;=&quot;)}</span> <span class="pre">[{{{{W:(0123...</span></em>, <em class="sig-param"><span class="pre">0123...)</span> <span class="pre">&quot;(&quot;}</span> <span class="pre">W:(0123...)}</span> <span class="pre">&quot;)&quot;}</span> <span class="pre">|</span> <span class="pre">&quot;1&quot;}]}))}</span> <span class="pre">Dict:(Group:({{Atomic</span> <span class="pre">Number</span> <span class="pre">|</span> <span class="pre">Atomic</span> <span class="pre">Symbol</span> <span class="pre">|</span> <span class="pre">Mass</span> <span class="pre">Number</span> <span class="pre">|</span> <span class="pre">Relative</span> <span class="pre">Atomic</span> <span class="pre">Mass</span> <span class="pre">|</span> <span class="pre">Isotopic</span> <span class="pre">Composition</span> <span class="pre">|</span> <span class="pre">Standard</span> <span class="pre">Atomic</span> <span class="pre">Weight</span> <span class="pre">|</span> <span class="pre">Notes</span> <span class="pre">Suppress:(&quot;=&quot;)}</span> <span class="pre">[{{{{{W:(0123...</span></em>, <em class="sig-param"><span class="pre">0123...)</span> <span class="pre">&quot;(&quot;}</span> <span class="pre">W:(0123...)}</span> <span class="pre">&quot;)&quot;}</span> <span class="pre">|</span> <span class="pre">{{{{&quot;[&quot;</span> <span class="pre">W:(0123...</span></em>, <em class="sig-param"><span class="pre">0123...)}</span> <span class="pre">Suppress:(&quot;</span></em>, <em class="sig-param"><span class="pre">&quot;)}</span> <span class="pre">W:(0123...</span></em>, <em class="sig-param"><span class="pre">0123...)}</span> <span class="pre">&quot;]&quot;}}</span> <span class="pre">|</span> <span class="pre">{{&quot;[&quot;</span> <span class="pre">W:(0123...)}</span> <span class="pre">&quot;]&quot;}}]}))}</span> <span class="pre">Dict:(Group:({{Atomic</span> <span class="pre">Number</span> <span class="pre">|</span> <span class="pre">Atomic</span> <span class="pre">Symbol</span> <span class="pre">|</span> <span class="pre">Mass</span> <span class="pre">Number</span> <span class="pre">|</span> <span class="pre">Relative</span> <span class="pre">Atomic</span> <span class="pre">Mass</span> <span class="pre">|</span> <span class="pre">Isotopic</span> <span class="pre">Composition</span> <span class="pre">|</span> <span class="pre">Standard</span> <span class="pre">Atomic</span> <span class="pre">Weight</span> <span class="pre">|</span> <span class="pre">Notes</span> <span class="pre">Suppress:(&quot;=&quot;)}</span> <span class="pre">[g</span> <span class="pre">|</span> <span class="pre">m</span> <span class="pre">|</span> <span class="pre">r</span></em>, <span class="optional">[</span><em class="sig-param"><span class="pre">g</span> <span class="pre">|</span> <span class="pre">m</span> <span class="pre">|</span> <span class="pre">r]...]}))}</span></em>, <em class="sig-param"><span class="pre">columns=['atomic_number'</span></em>, <em class="sig-param"><span class="pre">'symbol'</span></em>, <em class="sig-param"><span class="pre">'mass_number'</span></em>, <em class="sig-param"><span class="pre">'atomic_mass_nominal_value'</span></em>, <em class="sig-param"><span class="pre">'atomic_mass_std_dev'</span></em>, <em class="sig-param"><span class="pre">'atomic_mass_theoretical'</span></em>, <em class="sig-param"><span class="pre">'isotopic_comp_nominal_value'</span></em>, <em class="sig-param"><span class="pre">'isotopic_comp_std_dev'</span></em>, <em class="sig-param"><span class="pre">'atomic_weight_type'</span></em>, <em class="sig-param"><span class="pre">'atomic_weight_nominal_value'</span></em>, <em class="sig-param"><span class="pre">'atomic_weight_std_dev'</span></em>, <em class="sig-param"><span class="pre">'atomic_weight_lwr_bnd'</span></em>, <em class="sig-param"><span class="pre">'atomic_weight_upr_bnd'</span></em>, <em class="sig-param"><span class="pre">'atomic_weight_stable_mass_number'</span></em>, <em class="sig-param"><span class="pre">'notes'</span></em>, <span class="optional">]</span><em class="sig-param"><span class="pre">input_data=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.nist.weightscomp.NISTWeightsCompPyparser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../legacy/api/api.html#carsus.io.base.BasePyparser" title="carsus.io.base.BasePyparser"><code class="xref py py-class docutils literal notranslate"><span class="pre">carsus.io.base.BasePyparser</span></code></a></p>
+<p>Class for parsers for the NIST Atomic Weights and Isotopic Compositions database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>base</strong><span class="classifier">pandas.DataFrame</span></dt><dd></dd>
+<dt><strong>grammar</strong><span class="classifier">pyparsing.ParseElement</span></dt><dd><p>(default value = isotope)</p>
+</dd>
+<dt><strong>columns</strong><span class="classifier">list of str</span></dt><dd><p>(default value = COLUMNS)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>load(input_data)</strong></p></td>
+<td><p>Parses the input data and stores the results in the <code class="xref py py-obj docutils literal notranslate"><span class="pre">base</span></code> attribute</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>prepare_atomic_dataframe()</strong></p></td>
+<td><p>Returns a new dataframe created from the <code class="xref py py-obj docutils literal notranslate"><span class="pre">base</span></code> and containing data <em>only</em> related to atoms.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>prepare_isotopic_dataframe()</strong></p></td>
+<td><p>Returns a new dataframe created from the <code class="xref py py-obj docutils literal notranslate"><span class="pre">base</span></code> and containing data <em>only</em> related to isotopes</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="carsus.io.nist.weightscomp.NISTWeightsCompPyparser.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.nist.weightscomp.NISTWeightsCompPyparser.load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carsus.io.nist.weightscomp.NISTWeightsCompPyparser.prepare_atomic_dataframe">
+<span class="sig-name descname"><span class="pre">prepare_atomic_dataframe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.nist.weightscomp.NISTWeightsCompPyparser.prepare_atomic_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a new dataframe created from <code class="xref py py-obj docutils literal notranslate"><span class="pre">base</span></code> and containing data <em>only</em> related to atoms</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="carsus.io.nist.weightscomp.NISTWeightsCompPyparser.prepare_isotope_dataframe">
+<span class="sig-name descname"><span class="pre">prepare_isotope_dataframe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.nist.weightscomp.NISTWeightsCompPyparser.prepare_isotope_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a new dataframe created from <code class="xref py py-obj docutils literal notranslate"><span class="pre">base</span></code> and containing data <em>only</em> related to isotopes</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="carsus.io.nist.weightscomp.download_weightscomp">
+<span class="sig-prename descclassname"><span class="pre">carsus.io.nist.weightscomp.</span></span><span class="sig-name descname"><span class="pre">download_weightscomp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ascii</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ascii2'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isotype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'some'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.io.nist.weightscomp.download_weightscomp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downloader function for the NIST Atomic Weights and Isotopic Compositions database</p>
+<p>Makes a GET request to download data; then extracts preformatted text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ascii: str</strong></dt><dd><p>GET request parameter, refer to the NIST docs
+(default: ‘ascii’)</p>
+</dd>
+<dt><strong>isotype: str</strong></dt><dd><p>GET request parameter, refer to the NIST docs
+(default: ‘some’)</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str</dt><dd><p>Preformatted text data</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="carsus.io.nist.weightscomp_grammar.html" class="btn btn-neutral float-right" title="carsus.io.nist.weightscomp_grammar module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="carsus.io.nist.ionization_grammar.html" class="btn btn-neutral float-left" title="carsus.io.nist.ionization_grammar module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, TARDIS Collaboration.
+      <span class="lastupdated">
+        Last updated on 18 Jul 2021.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
