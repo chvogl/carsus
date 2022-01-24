@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compare Atomic Files &mdash; carsus v0.1.dev661+ga194067</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/tardis_logo.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SQL Interface" href="../legacy/index.html" />
+    <link rel="prev" title="Running Tests" href="testing.html" />
+    <link href="../_static/carsus.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> carsus
+          </a>
+              <div class="version">
+                0.1.dev661+ga194067
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart for Carsus</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Datasets</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../io/nist.html">NIST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/gfall.html">GFALL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/chianti.html">CHIANTI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/cmfgen.html">CMFGEN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/zeta.html">ZETA DATA</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Research with Carsus</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../research/publications.html">Carsus Publications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research/references.html">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing to Carsus</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">Physics Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Notes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="notation.html">Notation in Carsus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html">Units in Carsus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html">Running Tests</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Compare Atomic Files</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Legacy Code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../legacy/index.html">SQL Interface</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">carsus</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Developer Notes</a> &raquo;</li>
+      <li>Compare Atomic Files</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/development/compare_atomic_files.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt .copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="Compare-Atomic-Files">
+<h1>Compare Atomic Files<a class="headerlink" href="#Compare-Atomic-Files" title="Permalink to this headline"></a></h1>
+<p>This notebook shows how to compare the <code class="docutils literal notranslate"><span class="pre">levels_prepared</span></code> and <code class="docutils literal notranslate"><span class="pre">lines_prepared</span></code> DataFrames of the atomic files generated by Carsus.</p>
+<p>Let’s create two different TARDIS atomic files to use as examples.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">carsus.io.nist</span> <span class="kn">import</span> <span class="n">NISTWeightsComp</span><span class="p">,</span> <span class="n">NISTIonizationEnergies</span>
+<span class="kn">from</span> <span class="nn">carsus.io.kurucz</span> <span class="kn">import</span> <span class="n">GFALLReader</span>
+<span class="kn">from</span> <span class="nn">carsus.io.zeta</span> <span class="kn">import</span> <span class="n">KnoxLongZeta</span>
+<span class="kn">from</span> <span class="nn">carsus.io.chianti_</span> <span class="kn">import</span> <span class="n">ChiantiReader</span>
+<span class="kn">from</span> <span class="nn">carsus.io.output</span> <span class="kn">import</span> <span class="n">TARDISAtomData</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ ChiantiPy version 0.8.4
+ found PyQt5 widgets
+ using PyQt5 widgets
+</pre></div></div>
+</div>
+<p>For the first atomic file we grab species <code class="docutils literal notranslate"><span class="pre">H-C</span></code> from GFALL and <code class="docutils literal notranslate"><span class="pre">H-He</span></code> from Chianti.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atomic_weights</span> <span class="o">=</span> <span class="n">NISTWeightsComp</span><span class="p">()</span>
+<span class="n">ionization_energies</span> <span class="o">=</span> <span class="n">NISTIonizationEnergies</span><span class="p">(</span><span class="s1">&#39;H-C&#39;</span><span class="p">)</span>
+<span class="n">gfall_reader</span> <span class="o">=</span> <span class="n">GFALLReader</span><span class="p">(</span><span class="n">ions</span><span class="o">=</span><span class="s1">&#39;H-C&#39;</span><span class="p">)</span>
+<span class="n">chianti_reader</span> <span class="o">=</span> <span class="n">ChiantiReader</span><span class="p">(</span><span class="n">ions</span><span class="o">=</span><span class="s1">&#39;H-He&#39;</span><span class="p">,</span> <span class="n">collisions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">priority</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">zeta_data</span> <span class="o">=</span> <span class="n">KnoxLongZeta</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[<span class="ansi-bold"> carsus.io.nist.weightscomp</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Downloading data from the NIST Atomic Weights and Isotopic Compositions Database. (<span class="ansi-bold">weightscomp.py</span>:49)
+[<span class="ansi-bold">  carsus.io.nist.ionization</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Downloading ionization energies from the NIST Atomic Spectra Database. (<span class="ansi-bold">ionization.py</span>:65)
+[<span class="ansi-bold">     carsus.io.kurucz.gfall</span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>] - A specific combination to identify unique levels from GFALL data has not been given. Defaulting to [&#34;energy&#34;, &#34;j&#34;]. (<span class="ansi-bold">gfall.py</span>:95)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atom_data_a</span> <span class="o">=</span> <span class="n">TARDISAtomData</span><span class="p">(</span><span class="n">atomic_weights</span><span class="p">,</span>
+                             <span class="n">ionization_energies</span><span class="p">,</span>
+                             <span class="n">gfall_reader</span><span class="p">,</span>
+                             <span class="n">zeta_data</span><span class="p">,</span>
+                             <span class="n">chianti_reader</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Ingesting energy levels. (<span class="ansi-bold">base.py</span>:299)
+[<span class="ansi-bold">     carsus.io.kurucz.gfall</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Parsing GFALL from: https://media.githubusercontent.com/media/tardis-sn/carsus-db/master/gfall/gfall_latest.dat (<span class="ansi-bold">gfall.py</span>:148)
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - GFALL selected species: Li 0, Li 1, Be 0, Be 1, Be 2, B 0, B 1, B 2, B 3, C 0, C 1, C 2, C 3. (<span class="ansi-bold">base.py</span>:333)
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Chianti selected species: H 0, He 0, He 1. (<span class="ansi-bold">base.py</span>:337)
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Ingesting transition lines. (<span class="ansi-bold">base.py</span>:395)
+[<span class="ansi-bold">     carsus.io.kurucz.gfall</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Extracting line data: atomic_number, ion_charge, energy_lower, j_lower, energy_upper, j_upper, wavelength, loggf. (<span class="ansi-bold">gfall.py</span>:352)
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Matching levels and lines. (<span class="ansi-bold">base.py</span>:434)
+[<span class="ansi-bold">                py.warnings</span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>] - /usr/share/miniconda3/envs/carsus/lib/python3.6/site-packages/pandas/core/series.py:679: RuntimeWarning: divide by zero encountered in log10
+  result = getattr(ufunc, method)(*inputs, **kwargs)
+ (<span class="ansi-bold">warnings.py</span>:99)
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Ingesting collisional strengths. (<span class="ansi-bold">base.py</span>:588)
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Matching collisions and levels. (<span class="ansi-bold">base.py</span>:600)
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Finished. (<span class="ansi-bold">base.py</span>:79)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atom_data_a</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="s1">&#39;A.h5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Signing TARDISAtomData. (<span class="ansi-bold">base.py</span>:1038)
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - MD5: d74e41cc613b73f604ecfdde781786eb (<span class="ansi-bold">base.py</span>:1039)
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - UUID1: edfa2fcc7d3211ec8a62000d3a1ca7ca (<span class="ansi-bold">base.py</span>:1040)
+</pre></div></div>
+</div>
+<p>For the second atomic file we grab species <code class="docutils literal notranslate"><span class="pre">H-C</span></code> from GFALL and <code class="docutils literal notranslate"><span class="pre">C</span></code> from Chianti.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chianti_reader</span> <span class="o">=</span> <span class="n">ChiantiReader</span><span class="p">(</span><span class="n">ions</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">collisions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">priority</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atom_data_b</span> <span class="o">=</span> <span class="n">TARDISAtomData</span><span class="p">(</span><span class="n">atomic_weights</span><span class="p">,</span>
+                             <span class="n">ionization_energies</span><span class="p">,</span>
+                             <span class="n">gfall_reader</span><span class="p">,</span>
+                             <span class="n">zeta_data</span><span class="p">,</span>
+                             <span class="n">chianti_reader</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Ingesting energy levels. (<span class="ansi-bold">base.py</span>:299)
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - GFALL selected species: He 0, He 1, Li 0, Li 1, Be 0, Be 1, Be 2, B 0, B 1, B 2, B 3. (<span class="ansi-bold">base.py</span>:333)
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Chianti selected species: C 0, C 1, C 2, C 3, C 4, C 5. (<span class="ansi-bold">base.py</span>:337)
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Ingesting transition lines. (<span class="ansi-bold">base.py</span>:395)
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Matching levels and lines. (<span class="ansi-bold">base.py</span>:434)
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Ingesting collisional strengths. (<span class="ansi-bold">base.py</span>:588)
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Matching collisions and levels. (<span class="ansi-bold">base.py</span>:600)
+[<span class="ansi-bold">                py.warnings</span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>] - /home/runner/work/carsus/carsus/carsus/io/output/base.py:262: RuntimeWarning: divide by zero encountered in true_divide
+  x = (kt / delta_e) / (kt / delta_e + c)
+ (<span class="ansi-bold">warnings.py</span>:99)
+[<span class="ansi-bold">                py.warnings</span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>] - /home/runner/work/carsus/carsus/carsus/io/output/base.py:262: RuntimeWarning: invalid value encountered in true_divide
+  x = (kt / delta_e) / (kt / delta_e + c)
+ (<span class="ansi-bold">warnings.py</span>:99)
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Finished. (<span class="ansi-bold">base.py</span>:79)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atom_data_b</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="s1">&#39;B.h5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - Signing TARDISAtomData. (<span class="ansi-bold">base.py</span>:1038)
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - MD5: ff14b661fc5865ddd846984209c85057 (<span class="ansi-bold">base.py</span>:1039)
+[<span class="ansi-bold">      carsus.io.output.base</span>][   <span class="ansi-white-intense-fg ansi-bold">INFO</span>] - UUID1: fdf8a6747d3211ec8a62000d3a1ca7ca (<span class="ansi-bold">base.py</span>:1040)
+</pre></div></div>
+</div>
+<p>Define the following functions to compare both dataframes.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">carsus.util</span> <span class="kn">import</span> <span class="n">parse_selected_species</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">highlight_values</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">val</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;background-color: #BCF5A9&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;background-color: #F5A9A9&#39;</span>
+
+<span class="k">def</span> <span class="nf">highlight_diff</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">val</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;background-color: #BCF5A9&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;background-color: #F5A9A9&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compare_levels_lines</span><span class="p">(</span><span class="n">path_a</span><span class="p">,</span> <span class="n">path_b</span><span class="p">,</span> <span class="n">ions</span><span class="o">=</span><span class="s1">&#39;H-Zn&#39;</span><span class="p">):</span>
+
+    <span class="c1"># Read data</span>
+    <span class="n">levels_a</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">path_a</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;levels&#39;</span><span class="p">)</span>
+    <span class="n">levels_b</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">path_b</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;levels&#39;</span><span class="p">)</span>
+    <span class="n">lines_a</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">path_a</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">)</span>
+    <span class="n">lines_b</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">path_b</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Get ions list</span>
+    <span class="n">ions</span> <span class="o">=</span> <span class="n">parse_selected_species</span><span class="p">(</span><span class="n">ions</span><span class="p">)</span>
+
+    <span class="n">lvl_eq</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">lns_eq</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">ion</span> <span class="ow">in</span> <span class="n">ions</span><span class="p">:</span>
+
+        <span class="c1"># How many levels per ion in A</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">num_lvl_a</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">levels_a</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ion</span><span class="p">])</span>
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">num_lvl_a</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># How many levels per ion in B</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">num_lvl_b</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">levels_b</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ion</span><span class="p">])</span>
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">num_lvl_b</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># If level number is the same in A and B (and not zero)</span>
+        <span class="c1"># then compare cell against cell. `True` means all cells</span>
+        <span class="c1"># are equal in both dataframes.</span>
+        <span class="k">if</span> <span class="n">num_lvl_a</span> <span class="o">==</span> <span class="n">num_lvl_b</span><span class="p">:</span>
+            <span class="n">val_lvl</span> <span class="o">=</span> <span class="kc">True</span>
+
+            <span class="k">if</span> <span class="n">num_lvl_a</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">k</span> <span class="o">=</span> <span class="n">levels_a</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ion</span><span class="p">]</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">levels_b</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ion</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="n">num_lvl_a</span><span class="o">*</span><span class="mi">3</span> <span class="o">!=</span> <span class="n">k</span><span class="p">:</span>  <span class="c1"># x3 because this df has three columns!</span>
+                        <span class="n">val_lvl</span> <span class="o">=</span> <span class="kc">False</span>
+
+                <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+                    <span class="k">pass</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">val_lvl</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># Append the results</span>
+        <span class="n">lvl_eq</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">ion</span><span class="p">,</span> <span class="n">num_lvl_a</span><span class="p">,</span> <span class="n">num_lvl_b</span><span class="p">,</span> <span class="n">val_lvl</span><span class="p">))</span>
+
+
+        <span class="c1"># Same for lines</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">num_lns_a</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines_a</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ion</span><span class="p">])</span>
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">num_lns_a</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">num_lns_b</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines_b</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ion</span><span class="p">])</span>
+
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">num_lns_b</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="n">num_lns_a</span> <span class="o">==</span> <span class="n">num_lns_b</span><span class="p">:</span>
+            <span class="n">val_lns</span> <span class="o">=</span> <span class="kc">True</span>
+
+            <span class="k">if</span> <span class="n">num_lns_a</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">k</span> <span class="o">=</span> <span class="n">lines_a</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ion</span><span class="p">]</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">lines_b</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ion</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="n">num_lns_a</span><span class="o">*</span><span class="mi">8</span> <span class="o">!=</span> <span class="n">k</span><span class="p">:</span>
+                        <span class="n">val_lvl</span> <span class="o">=</span> <span class="kc">False</span>
+
+                <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+                    <span class="k">pass</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">val_lns</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="n">lns_eq</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">ion</span><span class="p">,</span> <span class="n">num_lns_a</span><span class="p">,</span> <span class="n">num_lns_b</span><span class="p">,</span> <span class="n">val_lns</span><span class="p">))</span>
+
+    <span class="n">df_lvl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lvl_eq</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ion&#39;</span><span class="p">,</span> <span class="s1">&#39;num_lvl_a&#39;</span><span class="p">,</span> <span class="s1">&#39;num_lvl_b&#39;</span><span class="p">,</span> <span class="s1">&#39;val_lvl&#39;</span><span class="p">])</span>
+    <span class="n">df_lns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lns_eq</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ion&#39;</span><span class="p">,</span> <span class="s1">&#39;num_lns_a&#39;</span><span class="p">,</span> <span class="s1">&#39;num_lns_b&#39;</span><span class="p">,</span> <span class="s1">&#39;val_lns&#39;</span><span class="p">])</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_lvl</span><span class="p">,</span> <span class="n">df_lns</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;ion&#39;</span><span class="p">)</span>
+
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;diff_lvl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;num_lvl_b&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;num_lvl_a&#39;</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;diff_lns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;num_lns_b&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;num_lns_a&#39;</span><span class="p">])</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;num_lvl_a&#39;</span><span class="p">,</span> <span class="s1">&#39;num_lvl_b&#39;</span><span class="p">,</span> <span class="s1">&#39;diff_lvl&#39;</span><span class="p">,</span> <span class="s1">&#39;val_lvl&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;num_lns_a&#39;</span><span class="p">,</span> <span class="s1">&#39;num_lns_b&#39;</span><span class="p">,</span> <span class="s1">&#39;diff_lns&#39;</span><span class="p">,</span> <span class="s1">&#39;val_lns&#39;</span><span class="p">]]</span>
+
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<p>Then, the comparison is straightforward:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tt</span> <span class="o">=</span> <span class="n">compare_levels_lines</span><span class="p">(</span><span class="s1">&#39;A.h5&#39;</span><span class="p">,</span> <span class="s1">&#39;B.h5&#39;</span><span class="p">,</span> <span class="n">ions</span><span class="o">=</span><span class="s1">&#39;H-C&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[<span class="ansi-bold">                py.warnings</span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>] - /usr/share/miniconda3/envs/carsus/lib/python3.6/site-packages/ipykernel_launcher.py:54: PerformanceWarning: indexing past lexsort depth may impact performance.
+ (<span class="ansi-bold">warnings.py</span>:99)
+[<span class="ansi-bold">                py.warnings</span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>] - /usr/share/miniconda3/envs/carsus/lib/python3.6/site-packages/ipykernel_launcher.py:70: PerformanceWarning: indexing past lexsort depth may impact performance.
+ (<span class="ansi-bold">warnings.py</span>:99)
+</pre></div></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>num_xxx_y (int) : number of levels/lines.
+diff_xxx (int) : difference in number of levels/lines.
+val_xxx (bool) : `True` if levels/lines have the same value.
+</pre></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="n">highlight_values</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;val_lvl&#39;</span><span class="p">,</span> <span class="s1">&#39;val_lns&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span>
+                    <span class="n">highlight_diff</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;diff_lvl&#39;</span><span class="p">,</span> <span class="s1">&#39;diff_lns&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<style  type="text/css" >
+    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow0_col2 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow0_col3 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow0_col6 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow0_col7 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow1_col2 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow1_col3 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow1_col6 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow1_col7 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow2_col2 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow2_col3 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow2_col6 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow2_col7 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow3_col2 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow3_col3 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow3_col6 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow3_col7 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow4_col2 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow4_col3 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow4_col6 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow4_col7 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow5_col2 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow5_col3 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow5_col6 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow5_col7 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow6_col2 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow6_col3 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow6_col6 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow6_col7 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow7_col2 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow7_col3 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow7_col6 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow7_col7 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow8_col2 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow8_col3 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow8_col6 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow8_col7 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow9_col2 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow9_col3 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow9_col6 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow9_col7 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow10_col2 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow10_col3 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow10_col6 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow10_col7 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow11_col2 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow11_col3 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow11_col6 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow11_col7 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow12_col2 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow12_col3 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow12_col6 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow12_col7 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow13_col2 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow13_col3 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow13_col6 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow13_col7 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow14_col2 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow14_col3 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow14_col6 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow14_col7 {
+            background-color:  #BCF5A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow15_col2 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow15_col3 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow15_col6 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow15_col7 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow16_col2 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow16_col3 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow16_col6 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow16_col7 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow17_col2 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow17_col3 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow17_col6 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow17_col7 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow18_col2 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow18_col3 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow18_col6 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow18_col7 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow19_col2 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow19_col3 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow19_col6 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow19_col7 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow20_col2 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow20_col3 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow20_col6 {
+            background-color:  #F5A9A9;
+        }    #T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow20_col7 {
+            background-color:  #F5A9A9;
+        }</style><table id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7ca" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >num_lvl_a</th>        <th class="col_heading level0 col1" >num_lvl_b</th>        <th class="col_heading level0 col2" >diff_lvl</th>        <th class="col_heading level0 col3" >val_lvl</th>        <th class="col_heading level0 col4" >num_lns_a</th>        <th class="col_heading level0 col5" >num_lns_b</th>        <th class="col_heading level0 col6" >diff_lns</th>        <th class="col_heading level0 col7" >val_lns</th>    </tr>    <tr>        <th class="index_name level0" >ion</th>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank" ></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row0" class="row_heading level0 row0" >(1, 0)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow0_col0" class="data row0 col0" >25</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow0_col1" class="data row0 col1" >1</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow0_col2" class="data row0 col2" >24</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow0_col3" class="data row0 col3" >False</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow0_col4" class="data row0 col4" >74</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow0_col5" class="data row0 col5" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow0_col6" class="data row0 col6" >74</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow0_col7" class="data row0 col7" >False</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row1" class="row_heading level0 row1" >(2, 0)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow1_col0" class="data row1 col0" >49</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow1_col1" class="data row1 col1" >744</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow1_col2" class="data row1 col2" >695</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow1_col3" class="data row1 col3" >False</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow1_col4" class="data row1 col4" >174</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow1_col5" class="data row1 col5" >605</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow1_col6" class="data row1 col6" >431</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow1_col7" class="data row1 col7" >False</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row2" class="row_heading level0 row2" >(2, 1)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow2_col0" class="data row2 col0" >25</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow2_col1" class="data row2 col1" >9</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow2_col2" class="data row2 col2" >16</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow2_col3" class="data row2 col3" >False</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow2_col4" class="data row2 col4" >67</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow2_col5" class="data row2 col5" >7</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow2_col6" class="data row2 col6" >60</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow2_col7" class="data row2 col7" >False</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row3" class="row_heading level0 row3" >(3, 0)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow3_col0" class="data row3 col0" >67</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow3_col1" class="data row3 col1" >67</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow3_col2" class="data row3 col2" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow3_col3" class="data row3 col3" >True</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow3_col4" class="data row3 col4" >403</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow3_col5" class="data row3 col5" >403</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow3_col6" class="data row3 col6" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow3_col7" class="data row3 col7" >True</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row4" class="row_heading level0 row4" >(3, 1)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow4_col0" class="data row4 col0" >55</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow4_col1" class="data row4 col1" >55</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow4_col2" class="data row4 col2" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow4_col3" class="data row4 col3" >True</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow4_col4" class="data row4 col4" >135</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow4_col5" class="data row4 col5" >135</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow4_col6" class="data row4 col6" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow4_col7" class="data row4 col7" >True</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row5" class="row_heading level0 row5" >(3, 2)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow5_col0" class="data row5 col0" >1</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow5_col1" class="data row5 col1" >1</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow5_col2" class="data row5 col2" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow5_col3" class="data row5 col3" >True</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow5_col4" class="data row5 col4" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow5_col5" class="data row5 col5" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow5_col6" class="data row5 col6" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow5_col7" class="data row5 col7" >True</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row6" class="row_heading level0 row6" >(4, 0)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow6_col0" class="data row6 col0" >28</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow6_col1" class="data row6 col1" >28</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow6_col2" class="data row6 col2" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow6_col3" class="data row6 col3" >True</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow6_col4" class="data row6 col4" >39</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow6_col5" class="data row6 col5" >39</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow6_col6" class="data row6 col6" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow6_col7" class="data row6 col7" >True</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row7" class="row_heading level0 row7" >(4, 1)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow7_col0" class="data row7 col0" >39</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow7_col1" class="data row7 col1" >39</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow7_col2" class="data row7 col2" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow7_col3" class="data row7 col3" >True</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow7_col4" class="data row7 col4" >185</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow7_col5" class="data row7 col5" >185</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow7_col6" class="data row7 col6" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow7_col7" class="data row7 col7" >True</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row8" class="row_heading level0 row8" >(4, 2)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow8_col0" class="data row8 col0" >17</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow8_col1" class="data row8 col1" >17</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow8_col2" class="data row8 col2" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow8_col3" class="data row8 col3" >True</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow8_col4" class="data row8 col4" >27</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow8_col5" class="data row8 col5" >27</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow8_col6" class="data row8 col6" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow8_col7" class="data row8 col7" >True</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row9" class="row_heading level0 row9" >(4, 3)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow9_col0" class="data row9 col0" >1</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow9_col1" class="data row9 col1" >1</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow9_col2" class="data row9 col2" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow9_col3" class="data row9 col3" >True</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow9_col4" class="data row9 col4" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow9_col5" class="data row9 col5" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow9_col6" class="data row9 col6" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow9_col7" class="data row9 col7" >True</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row10" class="row_heading level0 row10" >(5, 0)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow10_col0" class="data row10 col0" >34</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow10_col1" class="data row10 col1" >34</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow10_col2" class="data row10 col2" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow10_col3" class="data row10 col3" >True</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow10_col4" class="data row10 col4" >87</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow10_col5" class="data row10 col5" >87</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow10_col6" class="data row10 col6" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow10_col7" class="data row10 col7" >True</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row11" class="row_heading level0 row11" >(5, 1)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow11_col0" class="data row11 col0" >26</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow11_col1" class="data row11 col1" >26</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow11_col2" class="data row11 col2" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow11_col3" class="data row11 col3" >True</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow11_col4" class="data row11 col4" >43</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow11_col5" class="data row11 col5" >43</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow11_col6" class="data row11 col6" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow11_col7" class="data row11 col7" >True</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row12" class="row_heading level0 row12" >(5, 2)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow12_col0" class="data row12 col0" >26</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow12_col1" class="data row12 col1" >26</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow12_col2" class="data row12 col2" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow12_col3" class="data row12 col3" >True</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow12_col4" class="data row12 col4" >100</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow12_col5" class="data row12 col5" >100</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow12_col6" class="data row12 col6" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow12_col7" class="data row12 col7" >True</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row13" class="row_heading level0 row13" >(5, 3)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow13_col0" class="data row13 col0" >10</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow13_col1" class="data row13 col1" >10</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow13_col2" class="data row13 col2" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow13_col3" class="data row13 col3" >True</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow13_col4" class="data row13 col4" >7</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow13_col5" class="data row13 col5" >7</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow13_col6" class="data row13 col6" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow13_col7" class="data row13 col7" >True</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row14" class="row_heading level0 row14" >(5, 4)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow14_col0" class="data row14 col0" >1</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow14_col1" class="data row14 col1" >1</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow14_col2" class="data row14 col2" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow14_col3" class="data row14 col3" >True</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow14_col4" class="data row14 col4" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow14_col5" class="data row14 col5" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow14_col6" class="data row14 col6" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow14_col7" class="data row14 col7" >True</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row15" class="row_heading level0 row15" >(6, 0)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow15_col0" class="data row15 col0" >829</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow15_col1" class="data row15 col1" >42</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow15_col2" class="data row15 col2" >787</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow15_col3" class="data row15 col3" >False</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow15_col4" class="data row15 col4" >3249</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow15_col5" class="data row15 col5" >174</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow15_col6" class="data row15 col6" >3075</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow15_col7" class="data row15 col7" >False</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row16" class="row_heading level0 row16" >(6, 1)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow16_col0" class="data row16 col0" >85</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow16_col1" class="data row16 col1" >53</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow16_col2" class="data row16 col2" >32</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow16_col3" class="data row16 col3" >False</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow16_col4" class="data row16 col4" >374</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow16_col5" class="data row16 col5" >211</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow16_col6" class="data row16 col6" >163</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow16_col7" class="data row16 col7" >False</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row17" class="row_heading level0 row17" >(6, 2)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow17_col0" class="data row17 col0" >79</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow17_col1" class="data row17 col1" >20</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow17_col2" class="data row17 col2" >59</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow17_col3" class="data row17 col3" >False</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow17_col4" class="data row17 col4" >388</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow17_col5" class="data row17 col5" >34</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow17_col6" class="data row17 col6" >354</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow17_col7" class="data row17 col7" >False</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row18" class="row_heading level0 row18" >(6, 3)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow18_col0" class="data row18 col0" >36</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow18_col1" class="data row18 col1" >63</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow18_col2" class="data row18 col2" >27</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow18_col3" class="data row18 col3" >False</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow18_col4" class="data row18 col4" >192</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow18_col5" class="data row18 col5" >360</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow18_col6" class="data row18 col6" >168</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow18_col7" class="data row18 col7" >False</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row19" class="row_heading level0 row19" >(6, 4)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow19_col0" class="data row19 col0" >1</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow19_col1" class="data row19 col1" >49</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow19_col2" class="data row19 col2" >48</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow19_col3" class="data row19 col3" >False</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow19_col4" class="data row19 col4" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow19_col5" class="data row19 col5" >182</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow19_col6" class="data row19 col6" >182</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow19_col7" class="data row19 col7" >False</td>
+            </tr>
+            <tr>
+                        <th id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7calevel0_row20" class="row_heading level0 row20" >(6, 5)</th>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow20_col0" class="data row20 col0" >1</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow20_col1" class="data row20 col1" >25</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow20_col2" class="data row20 col2" >24</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow20_col3" class="data row20 col3" >False</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow20_col4" class="data row20 col4" >0</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow20_col5" class="data row20 col5" >74</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow20_col6" class="data row20 col6" >74</td>
+                        <td id="T_fe32db6e_7d32_11ec_8a62_000d3a1ca7carow20_col7" class="data row20 col7" >False</td>
+            </tr>
+    </tbody></table></div>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script></section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="testing.html" class="btn btn-neutral float-left" title="Running Tests" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../legacy/index.html" class="btn btn-neutral float-right" title="SQL Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2016-2022, TARDIS Collaboration.
+      <span class="lastupdated">Last updated on 24 Jan 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
